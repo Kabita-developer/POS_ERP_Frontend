@@ -1,0 +1,427 @@
+/* ═══════════════════════════════════════════
+   Finalize Sale Cash Modal — Modern Premium Style
+   ═══════════════════════════════════════════ */
+
+.fsc-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 20px;
+}
+
+.fsc-container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 900px;
+    border-radius: 28px;
+    box-shadow:
+        0 40px 100px rgba(0, 0, 0, 0.2),
+        0 10px 40px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ─── Header ─── */
+.fsc-header {
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #fff;
+    border-radius: 28px 28px 0 0;
+    z-index: 20;
+    position: relative;
+}
+
+.fsc-header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.fsc-header-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fsc-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: -0.4px;
+}
+
+.fsc-subtitle {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 4px 0 0;
+}
+
+.fsc-close-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    border: none;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.fsc-close-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: rotate(90deg);
+}
+
+/* ─── Body & Layout ─── */
+.fsc-body {
+    position: relative;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.fsc-content-layout {
+    display: flex;
+    width: 100%;
+}
+
+.fsc-form-section {
+    flex: 1;
+    padding: 20px 24px;
+}
+
+.fsc-quick-cash-section {
+    width: 180px;
+    background: #f8fafc;
+    border-left: 1px solid #e2e8f0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ─── Form Fields ─── */
+.fsc-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.fsc-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.fsc-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.fsc-label span {
+    color: #ef4444;
+}
+
+.fsc-input-icon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.fsc-input-icon {
+    position: absolute;
+    left: 14px;
+    color: #94a3b8;
+    z-index: 2;
+}
+
+.fsc-input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1e293b;
+    background: #f8fafc;
+    transition: all 0.25s;
+}
+
+.fsc-input.pl-10 {
+    padding-left: 38px;
+}
+
+.fsc-input.highlight-green {
+    border-color: #10b981;
+    background: #ecfdf5;
+    color: #059669;
+}
+
+.fsc-input:focus {
+    outline: none;
+    border-color: #10b981;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+}
+
+.fsc-value-display {
+    padding: 10px 14px;
+    border-radius: 12px;
+    background: #f1f5f9;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ─── Dropdown ─── */
+.fsc-dropdown-wrapper {
+    position: relative;
+}
+
+.fsc-dropdown-trigger {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.25s;
+    font-weight: 600;
+    color: #10b981;
+}
+
+.fsc-dropdown-trigger:hover,
+.fsc-dropdown-trigger.active {
+    border-color: #10b981;
+    background: #fff;
+}
+
+.fsc-dropdown-trigger.active {
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+}
+
+.fsc-dropdown-trigger svg {
+    color: #94a3b8;
+    transition: transform 0.3s;
+}
+
+.fsc-dropdown-trigger svg.rotated {
+    transform: rotate(180deg);
+}
+
+.fsc-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    overflow: hidden;
+    animation: peditSlideDown 0.2s ease-out;
+}
+
+.fsc-dropdown-item {
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-weight: 600;
+    color: #475569;
+    transition: all 0.2s;
+}
+
+.fsc-dropdown-item:hover {
+    background: #ecfdf5;
+    color: #059669;
+}
+
+.fsc-dropdown-item.selected {
+    background: #d1fae5;
+    color: #047857;
+}
+
+/* ─── Textarea ─── */
+.fsc-textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    font-weight: 500;
+    color: #1e293b;
+    background: #f8fafc;
+    transition: all 0.25s;
+    resize: none;
+}
+
+.fsc-textarea:focus {
+    outline: none;
+    border-color: #10b981;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+}
+
+.fsc-textarea::placeholder {
+    color: #cbd5e1;
+}
+
+/* ─── Actions ─── */
+.fsc-actions {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.fsc-btn-submit {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 28px;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 10px 20px -5px rgba(16, 185, 129, 0.4);
+}
+
+.fsc-btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 25px -5px rgba(16, 185, 129, 0.5);
+}
+
+/* ─── Quick Cash Side ─── */
+.fsc-qc-title {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #334155;
+    margin: 0 0 20px 0;
+    text-align: center;
+}
+
+.fsc-qc-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fsc-qc-btn {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 2px solid #e2e8f0;
+    background: #ffffff;
+    color: #4f46e5;
+    font-size: 1rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.fsc-qc-btn:hover {
+    border-color: #8b5cf6;
+    background: #f5f3ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
+}
+
+.fsc-qc-btn.clear {
+    margin-top: 10px;
+    background: #fef2f2;
+    border-color: #fecaca;
+    color: #ef4444;
+}
+
+.fsc-qc-btn.clear:hover {
+    background: #ef4444;
+    border-color: #ef4444;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+}
+
+/* Utility */
+.mt-4 {
+    margin-top: 16px;
+}
+
+.mt-6 {
+    margin-top: 20px;
+}
+
+/* ─── Animations ─── */
+@keyframes peditSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fscFadeIn 0.3s ease-out forwards;
+}
+
+.scale-in {
+    animation: fscScaleIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes fscFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fscScaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}

@@ -1,0 +1,374 @@
+/* ═══════════════════════════════════════════
+   Finalize Sale Gift Card Modal — Modern Premium Style
+   ═══════════════════════════════════════════ */
+
+.fsgc-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 20px;
+}
+
+.fsgc-container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 680px;
+    border-radius: 28px;
+    box-shadow:
+        0 40px 100px rgba(0, 0, 0, 0.2),
+        0 10px 40px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ─── Header ─── */
+.fsgc-header {
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #d946ef 0%, #a21caf 100%);
+    /* Fuchsia/Purple Theme */
+    color: #fff;
+    border-radius: 28px 28px 0 0;
+    z-index: 20;
+    position: relative;
+}
+
+.fsgc-header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.fsgc-header-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fsgc-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: -0.4px;
+}
+
+.fsgc-subtitle {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 4px 0 0;
+}
+
+.fsgc-close-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    border: none;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.fsgc-close-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: rotate(90deg);
+}
+
+/* ─── Body ─── */
+.fsgc-body {
+    padding: 24px 32px;
+    position: relative;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.fsgc-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.fsgc-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.fsgc-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.fsgc-label span {
+    color: #ef4444;
+}
+
+.fsgc-input-icon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.fsgc-input-icon {
+    position: absolute;
+    left: 14px;
+    color: #94a3b8;
+    z-index: 2;
+}
+
+.fsgc-input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1e293b;
+    background: #f8fafc;
+    transition: all 0.25s;
+}
+
+.fsgc-input.pl-10 {
+    padding-left: 38px;
+}
+
+.fsgc-input.highlight {
+    border-color: #d946ef;
+    background: #fdf4ff;
+    color: #a21caf;
+}
+
+.fsgc-input:focus {
+    outline: none;
+    border-color: #d946ef;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(217, 70, 239, 0.1);
+}
+
+.fsgc-value-display {
+    padding: 10px 14px;
+    border-radius: 12px;
+    background: #f1f5f9;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.fsgc-dropdown-wrapper {
+    position: relative;
+}
+
+.fsgc-dropdown-trigger {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.25s;
+    font-weight: 600;
+    color: #d946ef;
+}
+
+.fsgc-dropdown-trigger .text-muted {
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+.fsgc-dropdown-trigger:hover,
+.fsgc-dropdown-trigger.active {
+    border-color: #d946ef;
+    background: #fff;
+}
+
+.fsgc-dropdown-trigger.active {
+    box-shadow: 0 0 0 4px rgba(217, 70, 239, 0.1);
+}
+
+.fsgc-dropdown-trigger svg {
+    color: #94a3b8;
+    transition: transform 0.3s;
+}
+
+.fsgc-dropdown-trigger svg.rotated {
+    transform: rotate(180deg);
+}
+
+.fsgc-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    overflow: hidden;
+    animation: peditSlideDown 0.2s ease-out;
+}
+
+.fsgc-dropdown-item {
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-weight: 600;
+    color: #475569;
+    transition: all 0.2s;
+}
+
+.fsgc-gc-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.fsgc-dropdown-item:hover {
+    background: #fdf4ff;
+    color: #d946ef;
+}
+
+.fsgc-dropdown-item.selected {
+    background: #fae8ff;
+    color: #a21caf;
+}
+
+/* ─── Textarea ─── */
+.fsgc-textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    font-weight: 500;
+    color: #1e293b;
+    background: #f8fafc;
+    transition: all 0.25s;
+    resize: vertical;
+}
+
+.fsgc-textarea:focus {
+    outline: none;
+    border-color: #d946ef;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(217, 70, 239, 0.1);
+}
+
+.fsgc-textarea::placeholder {
+    color: #cbd5e1;
+}
+
+/* ─── Layout Utils ─── */
+.border-top {
+    border-top: 1px dashed #cbd5e1;
+    padding-top: 20px;
+}
+
+.mt-4 {
+    margin-top: 16px;
+}
+
+.mt-6 {
+    margin-top: 24px;
+}
+
+/* ─── Actions ─── */
+.fsgc-actions {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.fsgc-btn-submit {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 32px;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(135deg, #d946ef 0%, #a21caf 100%);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 10px 20px -5px rgba(162, 28, 175, 0.4);
+}
+
+.fsgc-btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 25px -5px rgba(162, 28, 175, 0.5);
+}
+
+/* ─── Animations ─── */
+@keyframes peditSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fsgcFadeIn 0.3s ease-out forwards;
+}
+
+.scale-in {
+    animation: fsgcScaleIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes fsgcFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fsgcScaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}

@@ -1,0 +1,201 @@
+/* ═══════════════════════════════════════════
+   User Profile Dropdown — Modern Premium Style
+   ═══════════════════════════════════════════ */
+
+.upd-dropdown-container {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    width: 280px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.08),
+        0 10px 15px rgba(0, 0, 0, 0.04),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+    z-index: 1000;
+    overflow: hidden;
+    transform-origin: top right;
+}
+
+/* ─── Header ─── */
+.upd-header {
+    padding: 24px 20px 18px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.upd-avatar-wrap {
+    position: relative;
+}
+
+.upd-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #6c2bd9 0%, #8b5cf6 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    box-shadow: 0 8px 16px rgba(108, 43, 217, 0.2);
+}
+
+.upd-status-dot {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    width: 14px;
+    height: 14px;
+    background: #10b981;
+    border: 3px solid #fff;
+    border-radius: 50%;
+}
+
+.upd-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0;
+}
+
+.upd-role {
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin: 2px 0 0;
+}
+
+/* ─── Menu List ─── */
+.upd-menu-list {
+    padding: 8px;
+}
+
+.upd-menu-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    border: none;
+    background: transparent;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.upd-menu-item:hover {
+    background: #f3f4f6;
+    transform: translateX(4px);
+}
+
+.upd-item-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.upd-item-left span {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+.upd-icon-box {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Accent Colors */
+.accent-purple {
+    background: #f5f3ff;
+    color: #8b5cf6;
+}
+
+.accent-blue {
+    background: #eff6ff;
+    color: #3b82f6;
+}
+
+.accent-green {
+    background: #ecfdf5;
+    color: #10b981;
+}
+
+.accent-orange {
+    background: #fff7ed;
+    color: #f97316;
+}
+
+.upd-chevron {
+    color: #9ca3af;
+    opacity: 0;
+    transition: all 0.2s;
+}
+
+.upd-menu-item:hover .upd-chevron {
+    opacity: 1;
+    transform: translateX(2px);
+}
+
+/* ─── Footer ─── */
+.upd-footer {
+    padding: 12px;
+}
+
+.upd-logout-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border: 1px solid #fee2e2;
+    background: #fef2f2;
+    color: #dc2626;
+    border-radius: 12px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.upd-logout-btn:hover {
+    background: #fee2e2;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.1);
+}
+
+.upd-logout-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ─── Utilities ─── */
+.upd-divider {
+    height: 1px;
+    background: #f1f5f9;
+    margin: 0 12px;
+}
+
+.fade-in {
+    animation: updFadeIn 0.25s ease-out forwards;
+}
+
+@keyframes updFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}

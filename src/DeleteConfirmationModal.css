@@ -1,0 +1,153 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1100;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content.delete-modal {
+    background: white;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 24px;
+    padding: 40px 30px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transform: translateY(20px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-content.slide-up {
+    transform: translateY(0);
+}
+
+.warning-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    background: #fff5f5;
+    color: #ff6b6b;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+}
+
+.delete-body h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 12px;
+}
+
+.delete-body p {
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.item-highlight {
+    color: #1e293b;
+    font-weight: 600;
+}
+
+.delete-footer {
+    display: flex;
+    gap: 12px;
+}
+
+.cancel-btn, .confirm-delete-btn {
+    flex: 1;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+}
+
+.cancel-btn {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.cancel-btn:hover {
+    background: #e2e8f0;
+    color: #1e293b;
+}
+
+.confirm-delete-btn {
+    background: #ff6b6b;
+    color: white;
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.25);
+}
+
+.confirm-delete-btn:hover {
+    background: #fa5252;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.35);
+}
+
+.close-top-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-top-btn:hover {
+    color: #1e293b;
+}
+
+/* Dark Mode Support */
+.dark-theme .modal-content.delete-modal {
+    background: #1e1e2d;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dark-theme .delete-body h2 {
+    color: #e2e8f0;
+}
+
+.dark-theme .delete-body p {
+    color: #a0aec0;
+}
+
+.dark-theme .warning-icon-wrapper {
+    background: rgba(255, 107, 107, 0.1);
+}
+
+.dark-theme .cancel-btn {
+    background: rgba(255, 255, 255, 0.05);
+    color: #cbd5e1;
+}
+
+.dark-theme .cancel-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .item-highlight {
+    color: white;
+}

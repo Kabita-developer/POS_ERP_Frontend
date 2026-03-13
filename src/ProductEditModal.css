@@ -1,0 +1,347 @@
+/* ═══════════════════════════════════════════
+   Product Edit Modal — Modern Premium Style
+   ═══════════════════════════════════════════ */
+
+.pedit-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 20px;
+}
+
+.pedit-container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 680px;
+    border-radius: 28px;
+    box-shadow:
+        0 40px 100px rgba(0, 0, 0, 0.2),
+        0 10px 40px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* ─── Header ─── */
+.pedit-header {
+    padding: 24px 32px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+    color: #fff;
+    border-radius: 28px 28px 0 0;
+    z-index: 20;
+    position: relative;
+}
+
+.pedit-header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.pedit-header-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pedit-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: -0.4px;
+}
+
+.pedit-code {
+    font-weight: 600;
+    opacity: 0.8;
+    font-size: 1.05rem;
+    margin-left: 6px;
+}
+
+.pedit-stock {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 4px 0 0;
+}
+
+.stock-count {
+    font-weight: 700;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 2px 8px;
+    border-radius: 6px;
+}
+
+.pedit-close-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    border: none;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.pedit-close-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: rotate(90deg);
+}
+
+/* ─── Body ─── */
+.pedit-body {
+    padding: 32px;
+    position: relative;
+}
+
+.pedit-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.pedit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.pedit-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pedit-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.pedit-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.pedit-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e293b;
+    background: #f8fafc;
+    transition: all 0.25s;
+}
+
+.pedit-input:focus {
+    outline: none;
+    border-color: #f43f5e;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(244, 63, 94, 0.1);
+}
+
+.pedit-suffix {
+    position: absolute;
+    right: 16px;
+    font-weight: 700;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    pointer-events: none;
+}
+
+.mt-4 {
+    margin-top: 24px;
+}
+
+/* ─── Dropdown ─── */
+.pedit-tax-dropdown {
+    position: relative;
+}
+
+.pedit-tax-trigger {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.25s;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.pedit-tax-trigger:hover,
+.pedit-tax-trigger.active {
+    border-color: #f43f5e;
+    background: #fff;
+}
+
+.pedit-tax-trigger.active {
+    box-shadow: 0 0 0 4px rgba(244, 63, 94, 0.1);
+}
+
+.pedit-tax-trigger svg {
+    color: #94a3b8;
+    transition: transform 0.3s;
+}
+
+.pedit-tax-trigger svg.rotated {
+    transform: rotate(180deg);
+}
+
+.pedit-tax-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    overflow: hidden;
+    animation: peditSlideDown 0.2s ease-out;
+}
+
+.pedit-tax-item {
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-weight: 600;
+    color: #475569;
+    transition: all 0.2s;
+}
+
+.pedit-tax-item:hover {
+    background: #fff1f2;
+    color: #e11d48;
+}
+
+.pedit-tax-item.selected {
+    background: #ffe4e6;
+    color: #e11d48;
+}
+
+/* ─── Textarea ─── */
+.pedit-textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    font-weight: 500;
+    color: #1e293b;
+    background: #f8fafc;
+    transition: all 0.25s;
+    resize: vertical;
+    min-height: 100px;
+}
+
+.pedit-textarea:focus {
+    outline: none;
+    border-color: #f43f5e;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(244, 63, 94, 0.1);
+}
+
+.pedit-textarea::placeholder {
+    color: #cbd5e1;
+}
+
+/* ─── Actions ─── */
+.pedit-actions {
+    margin-top: 32px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pedit-btn-update {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 32px;
+    border-radius: 16px;
+    border: none;
+    background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 10px 20px -5px rgba(225, 29, 72, 0.4);
+}
+
+.pedit-btn-update:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 25px -5px rgba(225, 29, 72, 0.5);
+}
+
+/* ─── Animations ─── */
+@keyframes peditSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: peditFadeIn 0.3s ease-out forwards;
+}
+
+.scale-in {
+    animation: peditScaleIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes peditFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes peditScaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}

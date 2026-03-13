@@ -1,0 +1,427 @@
+/* ════════════════════════════════════════════
+   Today's Profit Modal — Premium Modern Style
+   ════════════════════════════════════════════ */
+
+/* ─── Overlay ─── */
+.tpm-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(9, 9, 20, 0.65);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 16px;
+}
+
+/* ─── Container ─── */
+.tpm-container {
+    background: #ffffff;
+    border-radius: 22px;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    box-shadow:
+        0 36px 90px rgba(0, 0, 0, 0.2),
+        0 8px 24px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+/* ─── Header ─── */
+.tpm-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 24px 18px;
+    background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);
+    flex-shrink: 0;
+}
+
+.tpm-header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.tpm-header-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.tpm-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: -0.3px;
+}
+
+.tpm-subtitle {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 2px 0 0;
+}
+
+.tpm-close-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    border: none;
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    flex-shrink: 0;
+}
+
+.tpm-close-btn:hover {
+    background: rgba(255, 255, 255, 0.32);
+}
+
+/* ─── Body ─── */
+.tpm-body {
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* ─── Dropdown ─── */
+.tpm-dropdown-wrap {
+    position: relative;
+}
+
+.tpm-dropdown-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 11px 14px;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 12px;
+    background: #f9fafb;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.tpm-dropdown-trigger:hover,
+.tpm-dropdown-trigger.open {
+    border-color: #14b8a6;
+    background: #f0fdfa;
+    box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.12);
+}
+
+.tpm-dropdown-left {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.tpm-dropdown-icon {
+    color: #14b8a6;
+}
+
+.tpm-chevron {
+    color: #9ca3af;
+    transition: transform 0.25s;
+}
+
+.tpm-chevron.rotated {
+    transform: rotate(180deg);
+}
+
+/* Dropdown Menu */
+.tpm-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+    z-index: 100;
+    overflow: hidden;
+    animation: tpmDropIn 0.18s ease-out;
+}
+
+@keyframes tpmDropIn {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tpm-dropdown-item {
+    padding: 10px 14px;
+    font-size: 0.84rem;
+    color: #374151;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.15s;
+}
+
+.tpm-dropdown-item:hover {
+    background: #f0fdfa;
+}
+
+.tpm-dropdown-item.active {
+    background: #f0fdfa;
+    color: #0f766e;
+    font-weight: 600;
+}
+
+.tpm-check {
+    color: #14b8a6;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+/* ─── Stat Cards ─── */
+.tpm-stat-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tpm-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 13px 16px;
+    border-radius: 13px;
+    transition: all 0.2s;
+}
+
+.tpm-stat-card:hover {
+    transform: translateX(3px);
+}
+
+/* Accent variants */
+.tpm-accent-green {
+    background: linear-gradient(90deg, #f0fdf4 0%, #dcfce7 100%);
+    border: 1px solid #bbf7d0;
+}
+
+.tpm-accent-green .tpm-stat-icon {
+    color: #16a34a;
+    background: #dcfce7;
+}
+
+.tpm-accent-green .tpm-stat-value {
+    color: #15803d;
+}
+
+.tpm-accent-red {
+    background: linear-gradient(90deg, #fef2f2 0%, #fee2e2 100%);
+    border: 1px solid #fecaca;
+}
+
+.tpm-accent-red .tpm-stat-icon {
+    color: #dc2626;
+    background: #fee2e2;
+}
+
+.tpm-accent-red .tpm-stat-value {
+    color: #b91c1c;
+}
+
+.tpm-accent-orange {
+    background: linear-gradient(90deg, #fff7ed 0%, #ffedd5 100%);
+    border: 1px solid #fed7aa;
+}
+
+.tpm-accent-orange .tpm-stat-icon {
+    color: #ea580c;
+    background: #ffedd5;
+}
+
+.tpm-accent-orange .tpm-stat-value {
+    color: #c2410c;
+}
+
+.tpm-stat-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.tpm-stat-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.tpm-stat-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.tpm-stat-desc {
+    font-size: 0.7rem;
+    color: #9ca3af;
+}
+
+.tpm-stat-value {
+    font-size: 0.95rem;
+    font-weight: 700;
+    min-width: 50px;
+    text-align: right;
+}
+
+/* ─── Divider ─── */
+.tpm-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #e5e7eb 30%, #e5e7eb 70%, transparent);
+    margin: 0 -4px;
+}
+
+/* ─── Profit Row ─── */
+.tpm-profit-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 18px;
+    background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);
+    border-radius: 15px;
+    margin-bottom: 4px;
+}
+
+.tpm-profit-left {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.tpm-profit-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.tpm-profit-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.2px;
+}
+
+.tpm-profit-sub {
+    display: block;
+    font-size: 0.68rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 2px;
+}
+
+.tpm-profit-value-wrap {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.tpm-dollar {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.tpm-profit-value {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+}
+
+/* ─── Footer ─── */
+.tpm-footer {
+    padding: 12px 24px 18px;
+    border-top: 1px solid #f1f1f7;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.tpm-btn-close {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 22px;
+    border-radius: 10px;
+    border: 1.5px solid #e5e7eb;
+    background: #fff;
+    color: #4b5563;
+    font-size: 0.84rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tpm-btn-close:hover {
+    background: #f9fafb;
+    border-color: #d1d5db;
+    color: #1f2937;
+}
+
+/* ─── Animations ─── */
+.fade-in {
+    animation: tpmFadeIn 0.22s ease-out forwards;
+}
+
+.scale-in {
+    animation: tpmScaleIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes tpmFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes tpmScaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.87) translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
