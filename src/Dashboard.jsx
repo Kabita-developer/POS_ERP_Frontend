@@ -6,13 +6,25 @@ import {
     Sun, Moon, Maximize, Minimize, Printer, Globe, UserCircle, ChevronDown, BarChart3,
     ArrowRightLeft, ArrowUpRight, Trophy, LogOut, Tag, List, PlusCircle,
     ClipboardList, SlidersHorizontal, BarChart2, TrendingUp, RefreshCcw,
-    Wallet, BookOpen, UserCheck, UserPlus, Building2, Phone, Truck, DollarSign
+    Wallet, BookOpen, UserCheck, UserPlus, Building2, Phone, Truck, DollarSign,
+    ArrowUpCircle
 } from 'lucide-react';
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, Legend } from 'recharts';
 import PrintReport from './PrintReport';
 import POS from './POS';
 import CategoryList from './CategoryList';
 import ProductList from './ProductList';
+import AddProduct from './AddProduct';
+import AdjustmentList from './AdjustmentList';
+import AddAdjustment from './AddAdjustment';
+import StockCount from './StockCount';
+import PurchaseList from './PurchaseList';
+import AddPurchase from './AddPurchase';
+import ImportPurchase from './ImportPurchase';
+
+
+
+
 
 const navConfig = [
     {
@@ -39,9 +51,9 @@ const navConfig = [
         label: 'Purchase',
         icon: CreditCard,
         children: [
-            { label: 'Purchase List', icon: List },
-            { label: 'Add Purchase', icon: PlusCircle },
-            { label: 'Purchase Return', icon: RefreshCcw },
+            { id: 'purchase-list', label: 'Purchase List', icon: List },
+            { id: 'purchase-add', label: 'Add Purchase', icon: PlusCircle },
+            { id: 'purchase-import', label: 'Import Purchase by CSV', icon: ArrowUpCircle },
         ]
     },
     {
@@ -561,9 +573,30 @@ function Dashboard({ onLogout }) {
                     <CategoryList />
                 ) : activeView === 'product-list' ? (
                     <ProductList />
+                ) : activeView === 'product-add' ? (
+                    <AddProduct />
+                ) : activeView === 'product-adjustment-list' ? (
+                    <AdjustmentList />
+                ) : activeView === 'product-adjustment-add' ? (
+                    <AddAdjustment />
+                ) : activeView === 'product-stock-count' ? (
+                    <StockCount />
+                ) : activeView === 'purchase-list' ? (
+                    <PurchaseList 
+                        onAddPurchase={() => setActiveView('purchase-add')} 
+                        onImportPurchase={() => setActiveView('purchase-import')}
+                    />
+                ) : activeView === 'purchase-add' ? (
+                    <AddPurchase />
+                ) : activeView === 'purchase-import' ? (
+                    <ImportPurchase />
                 ) : (
                     <PrintReport />
                 )}
+
+
+
+
             </main>
         </div>
     );

@@ -1,0 +1,416 @@
+.add-product-container {
+    padding: 20px;
+    animation: fadeIn 0.4s ease-out;
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* Custom Scrollbar for AddProduct */
+.add-product-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.add-product-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.add-product-container::-webkit-scrollbar-thumb {
+    background: rgba(139, 92, 246, 0.2);
+    border-radius: 10px;
+}
+
+.add-product-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(139, 92, 246, 0.4);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.add-product-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 30px;
+}
+
+.page-header {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 15px;
+}
+
+.page-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #334155;
+    margin: 0;
+}
+
+.required-info-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #64748b;
+    font-size: 13px;
+    margin-bottom: 30px;
+    background: rgba(139, 92, 246, 0.05);
+    padding: 12px 18px;
+    border-radius: 10px;
+    border-left: 4px solid #8b5cf6;
+    font-style: italic;
+}
+
+.add-product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-grid-three {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+@media (max-width: 1024px) {
+    .form-grid-three {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .form-grid-three {
+        grid-template-columns: 1fr;
+    }
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.help-icon {
+    color: #8b5cf6;
+    cursor: help;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    outline: none;
+    font-size: 14px;
+    color: #1e293b;
+    background: #ffffff;
+    transition: all 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1);
+}
+
+.input-with-action {
+    display: flex;
+    gap: 8px;
+}
+
+.input-with-action input {
+    flex: 1;
+}
+
+.action-btn {
+    width: 44px;
+    height: 44px;
+    background: white;
+    border: 1px solid #8b5cf6;
+    color: #8b5cf6;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.action-btn:hover {
+    background: #8b5cf6;
+    color: white;
+}
+
+/* Checkbox Sections */
+.checkbox-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 5px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1e293b;
+}
+
+.checkbox-item input {
+    width: 18px;
+    height: 18px;
+    accent-color: #8b5cf6;
+}
+
+.featured-helper {
+    font-size: 12px;
+    color: #64748b;
+    margin-top: -20px;
+    font-style: italic;
+}
+
+/* Dropzone */
+.dropzone-area {
+    border: 2px dashed #e2e8f0;
+    border-radius: 12px;
+    padding: 60px 40px;
+    text-align: center;
+    transition: all 0.2s;
+    background: #f8fafc;
+    cursor: pointer;
+}
+
+.dropzone-area:hover {
+    border-color: #8b5cf6;
+    background: rgba(139, 92, 246, 0.02);
+}
+
+.upload-icon {
+    color: #94a3b8;
+    margin-bottom: 15px;
+}
+
+.dropzone-area p {
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* Editor */
+.editor-container {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+}
+
+.editor-menu {
+    background: #f8fafc;
+    padding: 8px 15px;
+    display: flex;
+    gap: 15px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.editor-menu button {
+    background: transparent;
+    border: none;
+    font-size: 12px;
+    font-weight: 500;
+    color: #64748b;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.editor-menu button:hover {
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+.editor-toolbar {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.toolbar-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tool-btn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 700;
+}
+
+.tool-btn:hover {
+    background: #f1f5f9;
+    color: #8b5cf6;
+}
+
+.tool-btn.bold { font-weight: 800; }
+.tool-btn.italic { font-style: italic; }
+
+.block-select {
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+    font-size: 13px;
+    color: #475569;
+    background: white;
+}
+
+.editor-content {
+    min-height: 200px;
+    padding: 20px;
+    outline: none;
+    font-size: 15px;
+    color: #1e293b;
+    line-height: 1.6;
+    position: relative;
+}
+
+.editor-content:empty:before {
+    content: "Product details...";
+    color: #94a3b8;
+}
+
+.editor-footer {
+    background: #f8fafc;
+    padding: 8px 15px;
+    text-align: right;
+    font-size: 11px;
+    font-weight: 700;
+    color: #94a3b8;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* Extra Checkboxes */
+.extra-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* Submit Section */
+.form-actions {
+    margin-top: 20px;
+}
+
+.submit-button {
+    background: #8b5cf6;
+    color: white;
+    padding: 12px 35px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+}
+
+.submit-button:hover {
+    background: #7c4dff;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(139, 92, 246, 0.3);
+}
+
+/* Dark Mode */
+.dark-mode .add-product-card {
+    background: #1e1e2d;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .page-title {
+    color: #f8fafc;
+}
+
+.dark-mode .page-header {
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .required-info-bar {
+    background: rgba(139, 92, 246, 0.03);
+    color: #94a3b8;
+}
+
+.dark-mode .form-group label {
+    color: #cbd5e1;
+}
+
+.dark-mode .form-group input,
+.dark-mode .form-group select,
+.dark-mode .form-group textarea {
+    background: #161621;
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #f8fafc;
+}
+
+.dark-mode .checkbox-item {
+    color: #cbd5e1;
+}
+
+.dark-mode .dropzone-area {
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .editor-container,
+.dark-mode .editor-menu,
+.dark-mode .editor-toolbar,
+.dark-mode .editor-footer {
+    background: #161621;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .editor-content {
+    background: #161621;
+    color: #f8fafc;
+}
+
+.dark-mode .editor-menu button:hover,
+.dark-mode .tool-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .block-select {
+    background: #161621;
+    color: #f8fafc;
+    border-color: rgba(255, 255, 255, 0.1);
+}
