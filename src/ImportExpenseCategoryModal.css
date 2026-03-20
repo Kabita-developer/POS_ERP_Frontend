@@ -1,0 +1,124 @@
+/* Base styling relies partly on AddExpenseCategoryModal.css */
+/* Specific styling for the import modal and file input */
+
+.import-modal-size {
+  max-width: 600px;
+}
+
+.ec-form-note {
+  font-size: 0.925rem;
+  color: #4b5563;
+  margin-top: -10px;
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+
+.dark-mode .ec-form-note {
+  color: #d1d5db;
+}
+
+.import-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.modern-file-upload {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #fff;
+  transition: border-color 0.2s;
+  height: 42px; /* Set a fixed height explicitly */
+}
+
+.modern-file-upload:focus-within {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+}
+
+.dark-mode .modern-file-upload {
+  background-color: rgba(0,0,0,0.2);
+  border-color: #4b5563;
+}
+
+.dark-mode .modern-file-upload:focus-within {
+  border-color: #8b5cf6;
+}
+
+.hidden-file-input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.file-upload-label {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  margin: 0;
+}
+
+.file-upload-btn {
+  background-color: #f3f4f6;
+  padding: 0 16px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  border-right: 1px solid #d1d5db;
+  transition: background-color 0.2s;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.file-upload-label:hover .file-upload-btn {
+  background-color: #e5e7eb;
+}
+
+.dark-mode .file-upload-btn {
+  background-color: rgba(255,255,255,0.05);
+  color: #e5e7eb;
+  border-color: #4b5563;
+}
+
+.dark-mode .file-upload-label:hover .file-upload-btn {
+  background-color: rgba(255,255,255,0.1);
+}
+
+.file-upload-text {
+  padding: 0 14px;
+  font-size: 0.875rem;
+  color: #6b7280;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.dark-mode .file-upload-text {
+  color: #9ca3af;
+}
+
+.download-sample-btn {
+  width: 100%;
+  justify-content: center;
+  height: 42px; /* Match file upload's height */
+  box-shadow: 0 2px 4px rgba(20, 184, 166, 0.2);
+}
+
+@media (max-width: 500px) {
+  .import-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

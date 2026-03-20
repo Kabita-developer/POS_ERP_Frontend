@@ -1,0 +1,212 @@
+.vec-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(17, 24, 39, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.vec-modal-container {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 450px;
+  border-radius: 12px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.dark-mode .vec-modal-container {
+  background-color: var(--card-bg, #1f2937);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border-color, #374151);
+}
+
+.vec-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid #f3f4f6;
+  background-color: #fcfcfd;
+}
+
+.dark-mode .vec-modal-header {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-bottom-color: var(--border-color, #374151);
+}
+
+.vec-modal-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.title-icon {
+  color: #8b5cf6;
+}
+
+.dark-mode .vec-modal-title {
+  color: #f9fafb;
+}
+
+.vec-modal-close-btn {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vec-modal-close-btn:hover {
+  background-color: #f3f4f6;
+  color: #ef4444;
+}
+
+.dark-mode .vec-modal-close-btn:hover {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+}
+
+.vec-modal-body {
+  padding: 24px;
+  background-color: #fff;
+}
+
+.dark-mode .vec-modal-body {
+  background-color: var(--card-bg, #1f2937);
+}
+
+.vec-info-card {
+  background-color: #f9fafb;
+  border: 1px solid #f3f4f6;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.dark-mode .vec-info-card {
+  background-color: rgba(0,0,0,0.2);
+  border-color: #374151;
+}
+
+.vec-info-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.vec-info-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-blue-100 { background-color: #dbeafe; }
+.text-blue-600 { color: #2563eb; }
+
+.bg-purple-100 { background-color: #f3e8ff; }
+.text-purple-600 { color: #9333ea; }
+
+.dark-mode .bg-blue-100 { background-color: rgba(37, 99, 235, 0.15); }
+.dark-mode .bg-purple-100 { background-color: rgba(147, 51, 234, 0.15); }
+.dark-mode .text-blue-600 { color: #60a5fa; }
+.dark-mode .text-purple-600 { color: #c084fc; }
+
+.vec-info-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.vec-info-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #6b7280;
+  letter-spacing: 0.05em;
+}
+
+.dark-mode .vec-info-label {
+  color: #9ca3af;
+}
+
+.vec-info-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.dark-mode .vec-info-value {
+  color: #f9fafb;
+}
+
+.vec-info-divider {
+  height: 1px;
+  background-color: #e5e7eb;
+  margin: 16px 0;
+}
+
+.dark-mode .vec-info-divider {
+  background-color: #374151;
+}
+
+.vec-modal-footer {
+  padding: 16px 24px;
+  border-top: 1px solid #f3f4f6;
+  background-color: #fcfcfd;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dark-mode .vec-modal-footer {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-top-color: var(--border-color, #374151);
+}
+
+.vec-btn-close {
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  background-color: #f3f4f6;
+  color: #4b5563;
+  border: 1px solid #d1d5db;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.vec-btn-close:hover {
+  background-color: #e5e7eb;
+  color: #111827;
+}
+
+.dark-mode .vec-btn-close {
+  background-color: transparent;
+  color: #d1d5db;
+  border-color: #4b5563;
+}
+
+.dark-mode .vec-btn-close:hover {
+  background-color: rgba(255,255,255,0.05);
+  color: #fff;
+}

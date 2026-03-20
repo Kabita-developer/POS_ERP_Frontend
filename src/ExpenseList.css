@@ -1,0 +1,338 @@
+/* ExpenseList.css */
+
+.expense-list-filter-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.dark-mode .expense-list-filter-card {
+  background-color: var(--card-bg, #1f2937);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+}
+
+.expense-list-title {
+  text-align: center;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #4b5563;
+  padding: 16px;
+  margin: 0;
+  border-bottom: 1px solid #f3f4f6;
+  background-color: #fcfcfd;
+}
+
+.dark-mode .expense-list-title {
+  color: #e5e7eb;
+  border-bottom-color: #374151;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.filter-form-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 24px 20px;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.filter-label {
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.dark-mode .filter-label {
+  color: #cbd5e1;
+}
+
+.daterange-input {
+  width: 240px;
+}
+
+.select-input {
+  width: 180px;
+}
+
+.filter-submit-btn {
+  padding: 9px 28px;
+  font-weight: 600;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #7c3aed, #8b5cf6);
+  box-shadow: 0 4px 6px -1px rgba(124, 58, 237, 0.2);
+}
+
+.no-border {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 16px;
+  background-color: transparent !important;
+}
+
+/* Toolbar Spacing Fixes */
+.table-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background-color: #fafafa;
+  border-bottom: 1px solid #f3f4f6;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.dark-mode .table-toolbar {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-bottom-color: #374151;
+}
+
+.toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 32px; /* Increased gap between Records Per Page and Search */
+  flex-wrap: wrap;
+}
+
+.record-selector, .search-box {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Gap between label text and input/select */
+}
+
+.records-per-page-text, .search-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.dark-mode .records-per-page-text, .dark-mode .search-label {
+  color: #9ca3af;
+}
+
+/* Ensure actions buttons have enough gap */
+.premium-action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* No sticky footers on the table itself now as we moved it to the outer footer */
+.expense-list-table tfoot .table-footer-row td {
+  display: none;
+}
+
+
+.table-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background-color: #ffffff;
+  border-top: 1px solid #f1f5f9;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.table-total-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f8fafc;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+
+.dark-mode .table-total-info {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: #374151;
+}
+
+.total-label {
+  font-size: 0.825rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+}
+
+.total-value {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+.dark-mode .total-value {
+  color: #f9fafb;
+}
+
+.dark-mode .table-footer {
+  background-color: #1f2937;
+  border-top-color: #374151;
+}
+
+.expense-list-table .empty-state-cell {
+  color: #6b7280;
+  font-weight: 500;
+  padding: 30px !important;
+}
+
+.dark-mode .expense-list-table .empty-state-cell {
+  color: #9ca3af;
+}
+
+.expense-category-container {
+  padding: 24px;
+  background-color: transparent;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.list-table-wrapper {
+  overflow-x: auto;
+  border-radius: 8px;
+  background: transparent;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.list-table-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Tighten table cells to prevent overflow */
+.expense-list-table th, 
+.expense-list-table td {
+  padding: 12px 12px !important;
+  font-size: 0.85rem;
+}
+
+.expense-list-table .action-cell {
+  padding-right: 15px !important;
+  min-width: 110px;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .filter-form-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .daterange-input,
+  .select-input {
+    width: 100%;
+  }
+}
+
+/* Column Visibility Toggle Styles (Matching Image) */
+.column-visibility-container {
+  position: relative;
+  display: inline-block;
+}
+
+.column-visibility-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background-color: #9333ea; /* Purple background from image */
+  color: white;
+  min-width: 220px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 150;
+  padding: 16px 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cv-header {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0 20px 12px;
+  opacity: 0.9;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 8px;
+}
+
+.cv-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.cv-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.cv-item .capitalize {
+  text-transform: capitalize;
+}
+
+.cv-switch {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 20px;
+}
+
+.cv-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.cv-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: .4s;
+  border-radius: 20px;
+}
+
+.cv-slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+.cv-switch input:checked + .cv-slider {
+  background-color: #22c55e; /* Green switch from image */
+}
+
+.cv-switch input:checked + .cv-slider:before {
+  transform: translateX(16px);
+}

@@ -1,0 +1,239 @@
+.vex-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(17, 24, 39, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.vex-modal-container {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 520px;
+  border-radius: 12px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.dark-mode .vex-modal-container {
+  background-color: var(--card-bg, #1f2937);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border-color, #374151);
+}
+
+.vex-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid #f3f4f6;
+  background-color: #fcfcfd;
+}
+
+.dark-mode .vex-modal-header {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-bottom-color: var(--border-color, #374151);
+}
+
+.vex-modal-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dark-mode .vex-modal-title {
+  color: #f9fafb;
+}
+
+.title-icon {
+  color: #8b5cf6;
+}
+
+.vex-modal-close-btn {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.vex-modal-close-btn:hover {
+  background-color: #f3f4f6;
+  color: #ef4444;
+}
+
+.dark-mode .vex-modal-close-btn:hover {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+}
+
+.vex-modal-body {
+  padding: 24px;
+}
+
+.vex-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.vex-info-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #f8fafc;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.dark-mode .vex-info-item {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: #374151;
+}
+
+.vex-info-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.date-bg { background-color: #ecfdf5; color: #10b981; }
+.ref-bg { background-color: #fef2f2; color: #ef4444; }
+.warehouse-bg { background-color: #eff6ff; color: #3b82f6; }
+.category-bg { background-color: #fef9c3; color: #ca8a04; }
+.amount-bg { background-color: #f3e8ff; color: #8b5cf6; }
+
+.dark-mode .vex-info-icon-wrap { background-color: rgba(255, 255, 255, 0.1); }
+.dark-mode .date-bg { color: #34d399; }
+.dark-mode .ref-bg { color: #f87171; }
+.dark-mode .warehouse-bg { color: #60a5fa; }
+.dark-mode .category-bg { color: #facc15; }
+.dark-mode .amount-bg { color: #a78bfa; }
+
+.vex-info-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.vex-info-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #64748b;
+  letter-spacing: 0.05em;
+}
+
+.dark-mode .vex-info-label {
+  color: #94a3b8;
+}
+
+.vex-info-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.dark-mode .vex-info-value {
+  color: #e2e8f0;
+}
+
+.vex-info-divider {
+  height: 1px;
+  background-color: #e2e8f0;
+  margin: 20px 0;
+}
+
+.dark-mode .vex-info-divider {
+  background-color: #374151;
+}
+
+.vex-note-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vex-note-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.vex-note-content {
+  background-color: #f9fafb;
+  border-radius: 8px;
+  padding: 16px;
+  min-height: 80px;
+  font-size: 0.9rem;
+  color: #4b5563;
+  line-height: 1.6;
+  border: 1px solid #f1f5f9;
+}
+
+.dark-mode .vex-note-content {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #cbd5e1;
+  border-color: #374151;
+}
+
+.vex-modal-footer {
+  padding: 16px 24px;
+  border-top: 1px solid #f3f4f6;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #fcfcfd;
+}
+
+.dark-mode .vex-modal-footer {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-top-color: #374151;
+}
+
+.vex-btn-close {
+  padding: 9px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  background-color: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.vex-btn-close:hover {
+  background-color: #e2e8f0;
+  color: #1e293b;
+}
+
+.dark-mode .vex-btn-close {
+  background-color: transparent;
+  color: #94a3b8;
+  border-color: #4b5563;
+}
+
+.dark-mode .vex-btn-close:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}

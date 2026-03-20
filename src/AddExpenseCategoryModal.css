@@ -1,0 +1,225 @@
+.ec-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(17, 24, 39, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.ec-modal-container {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 550px;
+  border-radius: 12px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.dark-mode .ec-modal-container {
+  background-color: var(--card-bg, #1f2937);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border-color, #374151);
+}
+
+.ec-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-bottom: 1px solid #f3f4f6;
+  background-color: #fcfcfd;
+}
+
+.dark-mode .ec-modal-header {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-bottom-color: var(--border-color, #374151);
+}
+
+.ec-modal-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 0;
+}
+
+.dark-mode .ec-modal-title {
+  color: #f9fafb;
+}
+
+.ec-modal-close-btn {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ec-modal-close-btn:hover {
+  background-color: #f3f4f6;
+  color: #ef4444;
+}
+
+.dark-mode .ec-modal-close-btn:hover {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+}
+
+.ec-modal-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ec-form-info {
+  font-size: 0.875rem;
+  font-style: italic;
+  color: #6b7280;
+  margin: 0 0 -4px 0;
+}
+
+.dark-mode .ec-form-info {
+  color: #9ca3af;
+}
+
+.ec-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ec-form-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.dark-mode .ec-form-label {
+  color: #e5e7eb;
+}
+
+.req-star {
+  color: #ef4444;
+}
+
+.ec-input-group {
+  display: flex;
+  align-items: stretch;
+}
+
+.ec-form-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  color: #111827;
+  outline: none;
+  background-color: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.ec-form-input.with-addon {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+}
+
+.dark-mode .ec-form-input {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-color: #4b5563;
+  color: #f9fafb;
+}
+
+.ec-form-input:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+}
+
+.dark-mode .ec-form-input:focus {
+  border-color: #8b5cf6;
+}
+
+.ec-btn-generate {
+  background-color: #f9fafb;
+  border: 1px solid #d1d5db;
+  color: #7c3aed;
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 0 16px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ec-btn-generate:hover {
+  background-color: #f3f4f6;
+  color: #6d28d9;
+}
+
+.dark-mode .ec-btn-generate {
+  background-color: rgba(124, 58, 237, 0.1);
+  border-color: #4b5563;
+  color: #a78bfa;
+}
+
+.dark-mode .ec-btn-generate:hover {
+  background-color: rgba(124, 58, 237, 0.2);
+  color: #c4b5fd;
+}
+
+.ec-modal-footer {
+  margin-top: 4px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.ec-btn-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #8b5cf6;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.2);
+}
+
+.ec-btn-submit:hover {
+  transform: translateY(-1px);
+  background-color: #7c3aed;
+  box-shadow: 0 6px 10px -2px rgba(124, 58, 237, 0.3);
+}
+
+.ec-btn-submit:active {
+  transform: translateY(0);
+}
+
+.slide-down {
+  animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}

@@ -21,7 +21,10 @@ import StockCount from './StockCount';
 import PurchaseList from './PurchaseList';
 import AddPurchase from './AddPurchase';
 import ImportPurchase from './ImportPurchase';
-
+import ExpenseCategory from './ExpenseCategory';
+import ExpenseList from './ExpenseList';
+import AddExpense from './AddExpense';
+import QuotationList from './QuotationList';
 
 
 
@@ -71,9 +74,9 @@ const navConfig = [
         label: 'Expense',
         icon: Wallet,
         children: [
-            { label: 'Expense List', icon: List },
-            { label: 'Add Expense', icon: PlusCircle },
-            { label: 'Expense Category', icon: Tag },
+            { id: 'expense-category', label: 'Expense category', icon: Tag },
+            { id: 'expense-list', label: 'Expense List', icon: List },
+            { id: 'expense-add', label: 'Add Expense', icon: PlusCircle },
         ]
     },
     {
@@ -81,8 +84,8 @@ const navConfig = [
         label: 'Quotation',
         icon: FileText,
         children: [
-            { label: 'Quotation List', icon: List },
-            { label: 'Add Quotation', icon: PlusCircle },
+            { id: 'quotation-list', label: 'Quotation List', icon: List },
+            { id: 'quotation-add', label: 'Add Quotation', icon: PlusCircle },
         ]
     },
     {
@@ -590,6 +593,14 @@ function Dashboard({ onLogout }) {
                     <AddPurchase />
                 ) : activeView === 'purchase-import' ? (
                     <ImportPurchase />
+                ) : activeView === 'expense-category' ? (
+                    <ExpenseCategory />
+                ) : activeView === 'expense-list' ? (
+                    <ExpenseList />
+                ) : activeView === 'expense-add' ? (
+                    <AddExpense onClose={() => setActiveView('expense-list')} />
+                ) : activeView === 'quotation-list' ? (
+                    <QuotationList />
                 ) : (
                     <PrintReport />
                 )}

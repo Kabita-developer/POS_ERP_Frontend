@@ -1,0 +1,184 @@
+.aex-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(17, 24, 39, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.aex-modal-container {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 650px;
+  border-radius: 12px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.dark-mode .aex-modal-container {
+  background-color: var(--card-bg, #1f2937);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border-color, #374151);
+}
+
+.aex-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid #f3f4f6;
+  background-color: #fcfcfd;
+}
+
+.dark-mode .aex-modal-header {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-bottom-color: var(--border-color, #374151);
+}
+
+.aex-modal-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+.dark-mode .aex-modal-title {
+  color: #f9fafb;
+}
+
+.aex-modal-close-btn {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.aex-modal-close-btn:hover {
+  background-color: #f3f4f6;
+  color: #ef4444;
+}
+
+.dark-mode .aex-modal-close-btn:hover {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+}
+
+.aex-modal-body {
+  padding: 24px;
+}
+
+.aex-form-info {
+  font-size: 0.825rem;
+  font-style: italic;
+  color: #64748b;
+  margin-bottom: 24px;
+}
+
+.dark-mode .aex-form-info {
+  color: #94a3b8;
+}
+
+.aex-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.aex-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.aex-form-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #475569;
+}
+
+.dark-mode .aex-form-label {
+  color: #cbd5e1;
+}
+
+.req-star {
+  color: #ef4444;
+}
+
+.aex-form-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #1e293b;
+  outline: none;
+  background-color: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.dark-mode .aex-form-input {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-color: #4b5563;
+  color: #f9fafb;
+}
+
+.aex-form-input:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
+}
+
+.aex-textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.aex-modal-footer {
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.aex-btn-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #8b5cf6;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.2);
+}
+
+.aex-btn-submit:hover {
+  transform: translateY(-2px);
+  background-color: #7c3aed;
+  box-shadow: 0 10px 15px -3px rgba(124, 58, 237, 0.3);
+}
+
+.aex-btn-submit:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+  .aex-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
